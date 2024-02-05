@@ -1,0 +1,42 @@
+<?php
+
+session_start();
+
+$trainerId = $_SESSION['id'];
+
+require_once "../parts/header.php";
+
+require_once "../../api/pokemons.api.php";
+require_once "../../models/pokemon.models.php";
+require_once "../../controllers/pokemon.controllers.php";
+require_once "../utilities.views.php";
+
+
+
+$pokemonsTrainerOwns = API_Pokemon::get_owned_pokemons($trainerId);
+
+?>
+
+<h3>Your pokeball</h3>
+
+<ul>
+<?php
+    if (!empty($pokemonsTrainerOwns)) {
+        foreach ($pokemonsTrainerOwns as $pokemon) {
+            $pokemonId = $pokemon['id'];
+            $pokemonImage = generateImageUrl($pokemonId);
+
+            echo '
+        <li class="pokemon-display">
+        ' . $pokemon['name'] . '<img src="' . $pokemonImage . '" alt="' . $pokemon['name'] . '">
+            <form method="post" action="../../includes/freepokemon.inc.php">
+                <input type="hidden" name="pokemon_id" value="' . $pokemonId . '">
+                <button type="submit" name="free_pokemon">Free pokemon!</button>
+            </form>
+        </li>';
+        }
+    } else {
+        echo "<li>You don't own any Pokémon yet.</li>";
+    }
+    ?>
+</ul>
