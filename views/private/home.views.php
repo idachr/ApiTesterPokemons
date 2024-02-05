@@ -17,7 +17,7 @@ $fact = $randomFactController->getRandomFactForDisplay();
     <br>
     <h3>Welcome <?php echo ucfirst($_SESSION['name']) ?></h3>
 
-    <a class="primary-btn" href="./catchpokemon.views.php">Catch pokemons</a><br>
+    <a class="all-btn primary-btn" href="./catchpokemon.views.php">Catch pokemons</a><br>
 
     <div class="full-screen-box">
         <h4>Here is a random pokemon fact!</h4>
@@ -34,7 +34,7 @@ $fact = $randomFactController->getRandomFactForDisplay();
         <div id="aloeveraContainer"></div>
     </div>
 
-    <a class="secondary-btn" href="./quiz.views.php">Take the pokemon quiz</a><br>
+    <a class="all-btn secondary-btn" href="./quiz.views.php">Take the pokemon quiz</a><br>
 
     <div class="full-screen-box">
         <?php if ($_SESSION['terms_approved']) { ?>
@@ -55,9 +55,7 @@ $fact = $randomFactController->getRandomFactForDisplay();
         var aloeveraCount = document.getElementById("aloeveraCount").value;
 
         var xhr = new XMLHttpRequest();
-        console.log("Doing something");
         xhr.open("GET", "../../includes/aloevera.inc.php?aloeveraCount=" + aloeveraCount, true);
-        console.log("Doing something more");
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4) {
                 if (xhr.status == 200) {

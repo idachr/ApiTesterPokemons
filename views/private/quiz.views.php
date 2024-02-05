@@ -27,22 +27,26 @@ $questions = $quizView->fetchQuestions();
 <main>
     <div>
         <h1>Quiz</h1>
-        <?php 
+        <?php
         foreach ($questions as $question) { ?>
-        <div class="question-box">
-            <h3><?php echo $question['question']; ?></h3>
-            <form id="quizForm">
-            <?php 
-            $answers = $quizView->fetchAnswers($question['id']);
-            foreach ($answers as $answer) {?> 
-                <label for="answer"><?php echo $answer['answer']; ?></label>
-                <input type="radio" name="answer" id="answer">
-            <?php } ?>
-        </form>
+            <div class="question-box">
+                <form id="quizForm">
+                    <h3><?php echo $question['question']; ?></h3>
 
-            <div id="answer-display">
+                    <?php
+                    $answers = $quizView->fetchAnswers($question['id']);
+                    foreach ($answers as $answer) { ?>
+
+                        <label for="answer"><?php echo $answer['answer']; ?></label>
+                        <input type="radio" name="submittet_answer" id="submittet_answer">
+
+                    <?php } ?>
+                    <button class="all-btn primary-btn" type="submit">Check answer</button>
+                </form>
+
+                <div id="answer-display">
+                </div>
             </div>
-        </div>
         <?php } ?>
     </div>
 </main>

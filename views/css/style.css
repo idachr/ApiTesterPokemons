@@ -15,8 +15,6 @@ body {
     text-align: center;
 }
 
-
-
 main {
     height: 100vh;
 }
@@ -25,6 +23,17 @@ main {
     text-align: center;
     background-color: white;
     width: 80vw;
+    margin: auto auto 30px auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 30px;
+    box-shadow: 10px 10px 15px rgb(125, 139, 159);
+}
+
+.half-screen-box {
+    text-align: center;
+    background-color: white;
+    width: 50vw;
     margin: auto auto 30px auto;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -51,48 +60,49 @@ p {
 }
 
 /* ------------------------------------------------------------------------------------------------Buttons css*/
-
-#btn-box {
-width: 100vw;
-background-color: pink;
+.all-btn {
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-family: 'Press Start 2P', system-ui;
+    box-shadow: 10px 10px 15px rgb(125, 139, 159);
+    display: block;
+    margin: 25px auto;
+    text-align: center;
+    width: 200px;
+    padding: 20px;
+    font-size: 15px;
+    border: 2px solid ;
 }
 
 .primary-btn {
-    padding: 20px;
     background-color: rgb(168, 55, 96);
-    color: white;
-    text-decoration: none;
-    font-family: 'Press Start 2P', system-ui;
-    border-radius: 30px;
-    box-shadow: 10px 10px 15px rgb(125, 139, 159);
-    display: block;
-    margin: 5% auto;
-    text-align: center;
-    width: 15%;
+    border: solid 2px  rgb(168, 55, 96);
 }
 
 .primary-btn:hover {
     background-color: rgb(60, 93, 121);
-    color: white;
+    border: solid 2px  rgb(60, 93, 121);
 }
 
 .secondary-btn {
-    padding: 20px;
     background-color: rgb(46, 124, 87);
-    color: white;
-    text-decoration: none;
-    font-family: 'Press Start 2P', system-ui;
-    border-radius: 30px;
-    box-shadow: 10px 10px 15px rgb(125, 139, 159);
-    display: block;
-    margin: 5% auto;
-    text-align: center;
-    width: 15%;
+    border: solid 2px  rgb(46, 124, 87);
 }
 
 .secondary-btn:hover {
     background-color: rgb(180, 105, 48);
-    color: white;
+    border: solid 2px  rgb(180, 105, 48);
+}
+
+.tertiary-btn {
+    background-color: rgb(19, 161, 156); 
+    border: solid 2px  rgb(19, 161, 156);  
+}
+
+.tertiary-btn:hover {
+    background-color: rgb(139, 82, 163);
+    border: solid 2px  rgb(139, 82, 163);   
 }
 
 
@@ -172,8 +182,36 @@ footer div img {
 }
 
 /*----------------------------------------------------------------------------------------Pokemon display*/
+#all-pokemons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100vw;
+}
+
 .pokemon-display {
     background-color: white;
+    padding: 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    flex: 0 0 15vw;
+    margin: 60px;
+    box-shadow: 10px 10px 15px rgb(125, 139, 159);
+}
+
+.pokemon-display a {
+    display: flex;
+    flex-direction: row;
+}
+
+.pokemon-display img {
+    width: 10vw;
+    height: auto;
 }
 
 #pokemon-display-profile {

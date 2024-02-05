@@ -13,30 +13,28 @@ if (isset($_SESSION['id'])) {
 <main>
     <h3>Catch pokemons</h3>
 
-    <ul>
+    <div id="all-pokemons">
         <?php
 
         if (is_array($pokemons)) {
             foreach ($pokemons as $pokemon) {
                 $pokemonId = isset($pokemon['url']) ? basename($pokemon['url']) : '';
-                $pokemonImage = generateImageUrl($pokemonId);
-
-                echo '
-            <li class="pokemon-display">
-                <a href="pokemonprofile.views.php?pokemon_id=' . $pokemonId . '">
-                    ' . $pokemon['name'] . '<img src="' . $pokemonImage . '" alt="' . $pokemon['name'] . '">
-                </a>
-                <form method="post" action="../../includes/catchpokemon.inc.php">
-                    <input type="hidden" name="pokemon_id" value="' . $pokemonId . '">
-                    <button type="submit" name="catch_pokemon">Catch Pokemon!</button>
-                </form>
-            </li>';
-            }
-        } else {
-            echo "<li>Error fetching Pokémon data</li>";
-        }
+                $pokemonImage = generateImageUrl($pokemonId); ?>
+                <div class="pokemon-display">
+                    <a href="pokemonprofile.views.php?pokemon_id=' . $pokemonId . '"><?php echo $pokemon['name'] ?>
+                        <img src="<?php echo $pokemonImage ?>" alt=" <?php $pokemon['name']; ?> '">
+                    </a>
+                    <form method="post" action="../../includes/catchpokemon.inc.php">
+                        <input type="hidden" name="pokemon_id" value="<?php echo $pokemonId ?>">
+                        <button class="all-btn tertiary-btn" type="submit" name="catch_pokemon">Catch Pokemon!</button>
+                    </form>
+                </div>
+            <?php  }
+        } else { ?>
+            <li>Error fetching Pokémon data</li>";
+        <?php }
         ?>
-    </ul>
+    </div>
 </main>
 
 </body>

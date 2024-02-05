@@ -31,7 +31,7 @@ $trainerInfo = new TrainerProfileView();
     </p>
 </div>
 
-<a class="primary-btn" href="./trainerprofilesettings.views.php">Edit info</a>
+<a class="all-btn primary-btn" href="./trainerprofilesettings.views.php">Edit info</a>
 
 <div id="profile-terms">
     <?php if ($_SESSION['terms_approved']) { ?>
@@ -42,7 +42,7 @@ $trainerInfo = new TrainerProfileView();
 
     <?php } ?>
 </div>
-<a class="secondary-btn" href="./terms.views.php">See the terms here</a><br>
+<a class="all-btn secondary-btn" href="./terms.views.php">See the terms here</a><br>
 
 <?php 
 require_once "../parts/footer.php";

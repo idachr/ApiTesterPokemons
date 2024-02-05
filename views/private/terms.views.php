@@ -25,7 +25,7 @@ require_once "../parts/header.php";
         ?> > <label for="terms_accepted">I accept the terms and conditions</label> <?php
     } ?>
 
-    <button type="submit" <?php if ($_SESSION['terms_approved']) {
+    <button class="all-btn primary-btn" type="submit" <?php if ($_SESSION['terms_approved']) {
          ?> disabled <?php } ?> >Accept terms and conditions</button>
 </form>
     

@@ -23,7 +23,7 @@ $trainerInfo = new TrainerProfileView();
     <label for="description">Description</label><br>
     <input type="text" name="description" value="<?php echo $trainerInfo->fetchDescription($_SESSION["id"]);?>"><br><br>
 
-    <button type="submit" name="submit">Save changes</button>
+    <button class="all-btn primary-btn" type="submit" name="submit">Save changes</button>
 </form>
 
 </body>
