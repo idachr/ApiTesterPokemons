@@ -40,13 +40,11 @@ $fact = $randomFactController->getRandomFactForDisplay();
         <?php if ($_SESSION['terms_approved']) { ?>
             <p>Everything is good! You have accepted the terms and conditions.</p>
 
-
         <?php } else { ?>
-
             <p>You have not accepted the terms and conditions. Please go <a href="./terms.views.php">here</a> to accept them.</p>
-
         <?php } ?>
     </div>
+
 </main>
 
 <script>
@@ -75,17 +73,17 @@ $fact = $randomFactController->getRandomFactForDisplay();
     }
 
     function displayAloeveraFlavors(response) {
-    console.log("Response from server:", response); // Log the response to the console
-    var aloeveraContainer = document.getElementById("aloeveraContainer");
-    aloeveraContainer.innerHTML = "<h4>Your Selected Flavors:</h4>";
-    
-    if (typeof response === 'object' && response !== null) {
-        aloeveraContainer.innerHTML += "<p>" + response['flavors'] + "</p>";
-    } else {
-        console.error("Invalid response type:", typeof response);
-    }
-}
+        console.log("Response from server:", response);
+        var aloeveraContainer = document.getElementById("aloeveraContainer");
+        aloeveraContainer.innerHTML = "<h4>Your Selected Flavors:</h4>";
 
+        if (typeof response === 'object' && response !== null) {
+            aloeveraContainer.innerHTML += "<p>" + response['flavors'] + "</p>";
+        } else {
+            console.error("Invalid response type:", typeof response);
+        }
+    }
+    
 </script>
 
 <?php

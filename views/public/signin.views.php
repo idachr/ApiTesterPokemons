@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+require_once "../parts/header-not-logged-in.php";
 
-<body>
+?>
 
     <h2>Don't have an accont? Create one here!</h2>
     <form action="../../includes/signup.inc.php" method="post">

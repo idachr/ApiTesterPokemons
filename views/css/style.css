@@ -47,7 +47,11 @@ main {
 
 /*--------------------------------------------------------------------------------------------------Text/Font css*/
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-family: 'Press Start 2P', system-ui;
 }
 
@@ -72,37 +76,37 @@ p {
     width: 200px;
     padding: 20px;
     font-size: 15px;
-    border: 2px solid ;
+    border: 2px solid;
 }
 
 .primary-btn {
     background-color: rgb(168, 55, 96);
-    border: solid 2px  rgb(168, 55, 96);
+    border: solid 2px rgb(168, 55, 96);
 }
 
 .primary-btn:hover {
     background-color: rgb(60, 93, 121);
-    border: solid 2px  rgb(60, 93, 121);
+    border: solid 2px rgb(60, 93, 121);
 }
 
 .secondary-btn {
     background-color: rgb(46, 124, 87);
-    border: solid 2px  rgb(46, 124, 87);
+    border: solid 2px rgb(46, 124, 87);
 }
 
 .secondary-btn:hover {
     background-color: rgb(180, 105, 48);
-    border: solid 2px  rgb(180, 105, 48);
+    border: solid 2px rgb(180, 105, 48);
 }
 
 .tertiary-btn {
-    background-color: rgb(19, 161, 156); 
-    border: solid 2px  rgb(19, 161, 156);  
+    background-color: rgb(19, 161, 156);
+    border: solid 2px rgb(19, 161, 156);
 }
 
 .tertiary-btn:hover {
     background-color: rgb(139, 82, 163);
-    border: solid 2px  rgb(139, 82, 163);   
+    border: solid 2px rgb(139, 82, 163);
 }
 
 
@@ -230,6 +234,7 @@ footer div img {
 #pokemon-display-profile img {
     width: 10vw;
 }
+
 /*---------------------------------------------------------------------------------------------Front page */
 /*---------------------------------------------------------------------------------------------Login page */
 /*---------------------------------------------------------------------------------------------Signup page */
