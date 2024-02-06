@@ -20,23 +20,19 @@ $pokemonsTrainerOwns = API_Pokemon::get_owned_pokemons($trainerId);
 <h3>Your pokeball</h3>
 
 <ul>
-<?php
+    <?php
     if (!empty($pokemonsTrainerOwns)) {
         foreach ($pokemonsTrainerOwns as $pokemon) {
             $pokemonId = $pokemon['id'];
-            $pokemonImage = generateImageUrl($pokemonId);
-
-            echo '
-        <li class="pokemon-display">
-        ' . $pokemon['name'] . '<img src="' . $pokemonImage . '" alt="' . $pokemon['name'] . '">
-            <form method="post" action="../../includes/freepokemon.inc.php">
-                <input type="hidden" name="pokemon_id" value="' . $pokemonId . '">
-                <button type="submit" name="free_pokemon">Free pokemon!</button>
-            </form>
-        </li>';
-        }
-    } else {
-        echo "<li>You don't own any Pokémon yet.</li>";
-    }
-    ?>
+            $pokemonImage = generateImageUrl($pokemonId); ?>
+            <li class="pokemon-display"><?php echo $pokemon['name']; ?><img src="<?php echo $pokemonImage ?>" alt="<?php echo $pokemon['name'] ?>">
+                <form method="post" action="../../includes/freepokemon.inc.php">
+                    <input type="hidden" name="pokemon_id" value="<?php echo $pokemonId ?>">
+                    <button type="submit" name="free_pokemon">Free pokemon!</button>
+                </form>
+            </li>
+        <?php }
+    } else { ?>
+        <li>You don't own any Pokémon yet.</li>
+    <?php } ?>
 </ul>
